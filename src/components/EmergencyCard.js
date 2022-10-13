@@ -5,9 +5,14 @@ import { colors } from "../../config/color";
 export default function EmergencyCard({
   uri = "https://images.pexels.com/photos/6647120/pexels-photo-6647120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   title = "Emergency Help",
+  onPress = () => {},
 }) {
   return (
-    <TouchableOpacity style={styles.container} activeOpacity={0.6}>
+    <TouchableOpacity
+      style={styles.container}
+      activeOpacity={0.6}
+      onPress={onPress}
+    >
       <Image
         style={styles.image}
         source={{

@@ -10,7 +10,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import EmergencyCard from "../components/EmergencyCard";
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }) {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.userGreetings}>
@@ -67,14 +67,19 @@ export default function WelcomeScreen() {
           <Text style={styles.actionText}>See all</Text>
         </View>
 
-        <EmergencyCard title="Donate for hungry people" />
+        <EmergencyCard
+          title="Donate for hungry people"
+          onPress={() => navigation.navigate("Details")}
+        />
         <EmergencyCard
           title="Donate for children"
           uri="https://images.pexels.com/photos/1250452/pexels-photo-1250452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          onPress={() => navigation.navigate("Details")}
         />
         <EmergencyCard
           title="Donate for forest fire"
           uri="https://images.pexels.com/photos/266487/pexels-photo-266487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          onPress={() => navigation.navigate("Details")}
         />
       </View>
     </ScrollView>

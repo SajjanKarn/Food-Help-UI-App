@@ -17,6 +17,26 @@ import {
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import { colors } from "./config/color";
+import Details from "./src/screens/Details";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
+
+const AppNavigator = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      initialRouteName="Welcome"
+    >
+      <Stack.Screen name="Welcome" component={WelcomeScreen} />
+      <Stack.Screen name="Details" component={Details} />
+    </Stack.Navigator>
+  );
+};
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -39,7 +59,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={colors.primary} />
-      <WelcomeScreen />
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
     </View>
   );
 }
