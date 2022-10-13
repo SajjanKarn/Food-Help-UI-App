@@ -1,4 +1,11 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { width, height, totalSize } from "react-native-dimension";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -8,7 +15,7 @@ import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 
 export default function Details({ navigation }) {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
         <TouchableOpacity
           style={styles.backContainer}
@@ -98,7 +105,7 @@ export default function Details({ navigation }) {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
